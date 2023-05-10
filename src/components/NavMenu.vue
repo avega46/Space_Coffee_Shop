@@ -11,8 +11,10 @@ const brand = ref('🌌Space Coffee Shop☕')
         <span class="brand-title">{{ brand }}</span>
       </div>
       <div class="menu">
+        <a href="#" class="menu-item">Home</a>
         <a href="#" class="menu-item">Coffees</a>
         <a href="#" class="menu-item">Settings</a>
+        <a href="#" class="menu-item">Other</a>
         <a href="#" class="menu-login">Logout</a>
       </div>
     </div>
@@ -37,7 +39,7 @@ nav {
         @apply text-gray-900 rounded-md px-4 py-2 hover:bg-blue-900 hover:text-yellow-50;
       }
       &-login {
-        @apply rounded-md bg-purple-900 px-4 py-2 hover:bg-red-700 hover:text-yellow-50;
+        @apply rounded-md bg-purple-900 px-4 py-2 hover:bg-red-700 hover:text-black;
       }
     }
   }
