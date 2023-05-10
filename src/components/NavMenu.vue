@@ -7,19 +7,18 @@ const brand = ref('🌌Space Coffee Shop☕')
 <template>
   <nav>
     <div class="wrapper">
-      <div class="brand">
+      <RouterLink :to="{ name: 'Home'}" class="brand">
         <span class="brand-title">{{ brand }}</span>
-      </div>
+      </RouterLink>
       <div class="menu">
-        <a href="#" class="menu-item">Home</a>
-        <a href="#" class="menu-item">Coffees</a>
-        <a href="#" class="menu-item">Settings</a>
-        <a href="#" class="menu-item">Other</a>
-        <a href="#" class="menu-login">Logout</a>
+        <RouterLink :to="{name: 'Home'}" href="#" class="menu-item">Coffees</RouterLink>
+        <RouterLink :to="{name: 'Home'}" href="#" class="menu-item">Settings</RouterLink>
+        <RouterLink :to="{name: 'Other'}" href="#" class="menu-item">Other</RouterLink>
+        <RouterLink :to="{name: 'Login'}" href="#" class="menu-login">Login</RouterLink>
+        <RouterLink :to="{name: 'Home'}" href="#" class="menu-logout">Logout</RouterLink>
+        
       </div>
-    </div>
-    <RouterLink to="/">Home</RouterLink>
-    <RouterLink to="/other">Other</RouterLink>
+      </div>
   </nav>
 </template>
 
@@ -39,6 +38,9 @@ nav {
         @apply text-gray-900 rounded-md px-4 py-2 hover:bg-blue-900 hover:text-yellow-50;
       }
       &-login {
+        @apply rounded-md bg-teal-800 px-4 py-2 hover:bg-yellow-500 hover:text-black;
+      }
+      &-logout {
         @apply rounded-md bg-purple-900 px-4 py-2 hover:bg-red-700 hover:text-black;
       }
     }
