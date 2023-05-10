@@ -1,39 +1,44 @@
 import { ref } from 'vue'
+import router from '@/router'
 
 const dbUsers = [
     {
         username: 'admin',
         password: 'admin',
-        user: {
-            name: 'Admin',
-            role: 'admin',
-            email: 'admin@coolcompany.com',
-        },
+        name: 'Admin',
+        role: 'admin',
+        email: 'admin@coolcompany.com',
     },
     {
         username: 'user',
         password: 'user',
-        user: {
-            name: 'User',
-            role: 'user',
-            email: 'user@coolcompany.com',
-        },
+        name: 'User',
+        role: 'user',
+        email: 'user@coolcompany.com',
     },
 ]
 
-const isAuthernticated = ref(false)
+const isAuthenticated = ref(false)
 const user = ref({})
 
-const getUser = (username, password) => { }
+///const getUser = (username, password) => { }
 
 export const useAuth = () => {
     const login = (username, password) => {
-        const user = dbusers.find((u) => u.username === username && u.password === password)
-        if (user) {
-            const { name, role, email, username } = user
-            isAuthernticated.value = true
-            user.value = {name, role, email, username }
+        const dbUser = dbUsers.find((u) => u.username === username && u.password === password)
+        if (dbUser) {
+            const { name, role, email, username } = dbUser
+            isAuthenticated.value = true
+            user.value = { name, role, email, username }
+            return true
         }
+        return false
     }
-    return { isAuthernticated, user, login }
+
+    const logout = () => {
+        isAuthenticated.value = false
+        user.value = {}
+        router.push({name: 'Home'})
+    }
+    return { isAuthenticated, user, login, logout }
 }
