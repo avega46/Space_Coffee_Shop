@@ -11,7 +11,7 @@ const brand = ref('🌌Space Coffee Shop☕')
         <span class="brand-title">{{ brand }}</span>
       </RouterLink>
       <div class="menu">
-        <RouterLink :to="{name: 'Home'}" href="#" class="menu-item">Coffees</RouterLink>
+        <RouterLink :to="{name: 'Coffees'}" href="#" class="menu-item">Coffees</RouterLink>
         <RouterLink :to="{name: 'Settings'}" href="#" class="menu-item">Settings</RouterLink>
         <RouterLink :to="{name: 'Other'}" href="#" class="menu-item">Other</RouterLink>
         <RouterLink :to="{name: 'Login'}" href="#" class="menu-login">Login</RouterLink>
