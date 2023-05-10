@@ -4,5 +4,6 @@
 
 <template>
   <NavMenu />
+  <h1>Main Content</h1>
   <RouterView />
 </template>
