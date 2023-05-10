@@ -29,9 +29,10 @@ const deleteItems = id => {
        id="newItems"
        autocomplete="off"
        type="text"
-       placeholder="Like to add some basic coffee items?"
+       placeholder="Add coffee items?"
        v-model="newItems"
        />
+      
     <button id="addButton" type="submit">Add</button>
    </form>
    <h3>Items Added: {{ earthtricks.length }}</h3>
@@ -48,9 +49,9 @@ main{
   @apply mt-8 flex flex-col justify-center items-center gap-8;
 }
 form {
-  @apply mt-8 flex focus-within:ring-8 focus-within:ring-blue-900 focus-within:rounded-sm;
+  @apply mt-8 flex flex-col focus-within:ring-8 focus-within:ring-blue-900 focus-within:rounded-sm;
   input {
-    @apply bg-white p-2 w-80 text-2xl rounded-l-md outline-none;
+    @apply bg-white  p-2 w-80 text-2xl rounded-l-md outline-none;
   }
   button {
     @apply bg-blue-900 p-2 text-2xl font-bold rounded-r-md text-white;
