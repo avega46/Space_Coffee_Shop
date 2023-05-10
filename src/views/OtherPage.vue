@@ -34,6 +34,7 @@ const deleteItems = id => {
        />
     <button id="addButton" type="submit">Add</button>
    </form>
+   <h3>Items Added: {{ earthtricks.length }}</h3>
    <ul>
     <li v-for="earthly in earthtricks" @click=deleteItems>{{ earthly.id }}
     {{ earthly.name }}
